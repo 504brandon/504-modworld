@@ -22,7 +22,7 @@ class ModSelectSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Base Game', 'Whitty', 'Smoke Em Out Struggle', '8bit Ryan', 'Sans'];
+	var menuItems:Array<String> = ['Base Game', 'Whitty', 'Smoke Em Out Struggle', '8bit Ryan', 'Sans', 'Random'];
 	var curSelected:Int = 0;
 
     public static var inMods:Bool;

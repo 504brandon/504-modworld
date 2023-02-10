@@ -281,5 +281,9 @@ class Note extends FlxSprite
 			if (alpha > 0.3)
 				alpha = 0.3;
 		}
+
+		if (ID < 0){
+			kill();
+		}
 	}
 }

@@ -655,6 +655,59 @@ class Character extends FlxSprite
 					addOffset("singDOWN-alt", 45, 6);
 
 					playAnim('idle');
+
+				case 'tankman':
+					tex = Paths.getSparrowAtlas('tankmanCaptain','shared',true);
+					frames = tex;
+					animation.addByPrefix('idle', "Tankman Idle Dance", 24);
+					animation.addByPrefix('oldSingUP', 'Tankman UP note ', 24, false);
+					animation.addByPrefix('singUP', 'Tankman UP note ', 24, false);
+					animation.addByPrefix('singDOWN-alt', 'PRETTY GOOD tankman instance 1', 24);
+					animation.addByPrefix('singDOWN', 'Tankman DOWN note ', 24, false);
+					animation.addByPrefix('singLEFT', 'Tankman Right Note ', 24, false);
+					animation.addByPrefix('singRIGHT', 'Tankman Note Left ', 24, false);
+			
+					animation.addByPrefix('ughAnim', 'TANKMAN UGH', 24, false);
+
+					loadOffsetFile(curCharacter);
+
+					playAnim('idle');
+
+					flipX = true;
+				
+				case 'bf-fleetway-p':
+					tex = Paths.getSparrowAtlas('fleetway fw','shared',true);
+					frames = tex;
+					animation.addByPrefix('idle', 'Fleet left0', 1);
+					animation.addByPrefix('singUP', 'Fleet up0', 24);
+					animation.addByPrefix('singRIGHT', 'Fleet right0', 24);
+					animation.addByPrefix('singDOWN', 'Fleet down0', 24);
+					animation.addByPrefix('singLEFT', 'Fleet left0', 24);
+	
+					addOffset('idle', 35,22);
+					addOffset("singUP", -22,-31);
+					addOffset("singRIGHT", -20,14);
+					addOffset("singLEFT", 35,22);
+					addOffset("singDOWN", 0,0);
+
+					flipX = true;
+
+				case 'bf-sonic-p':
+					tex = Paths.getSparrowAtlas('sonic fw','shared',true);
+					frames = tex;
+					animation.addByPrefix('idle', 'Sonic idle', 24);
+					animation.addByPrefix('singUP', 'Sonic up0', 24);
+					animation.addByPrefix('singRIGHT', 'Sonic right0', 24);
+					animation.addByPrefix('singDOWN', 'Sonic down0', 24);
+					animation.addByPrefix('singLEFT', 'Sonic left0', 24);
+
+					addOffset('idle', 0,0 );
+					addOffset("singUP", -30,-9);
+					addOffset("singRIGHT", -29,-1);
+					addOffset("singLEFT", 8,3);
+					addOffset("singDOWN", 0,0);
+
+					flipX = true;
 		}
 
 		dance();
