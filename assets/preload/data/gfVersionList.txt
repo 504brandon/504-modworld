@@ -2,3 +2,6 @@ gf
 gf-car
 gf-christmas
 gf-pixel
+gf-ryan
+gf-whitty
+gf-whitty-zoom

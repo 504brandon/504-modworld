@@ -1,0 +1,3 @@
+Stronger:sans:1
+Megalomaniac:sans2:1
+Reality-Check:sans3:1

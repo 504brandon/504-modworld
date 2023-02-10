@@ -594,6 +594,67 @@ class Character extends FlxSprite
 					addOffset("garTightBars", 0, 0);
 	
 					playAnim('idle');
+
+				case 'sans':
+					tex = Paths.getSparrowAtlas('Sans_assets','shared',true);
+					frames = tex;
+					animation.addByPrefix('idle', 'sans Idle Dance0', 24);
+					animation.addByPrefix('singUP', 'sans Up Note0', 24);
+					animation.addByPrefix('singRIGHT', 'sans Right Note0', 24);
+					animation.addByPrefix('singDOWN', 'sans Down Note0', 24);
+					animation.addByPrefix('singLEFT', 'sans Left Note0', 24);
+
+					addOffset('idle');
+					addOffset("singUP", 14, 100);
+					addOffset("singRIGHT", -2, -6);
+					addOffset("singLEFT", 95, -1);
+					addOffset("singDOWN", 45, 6);
+
+					playAnim('idle');
+
+
+				case 'sans2':
+					tex = Paths.getSparrowAtlas('Sans_assets2','shared',true);
+					frames = tex;
+					animation.addByPrefix('idle', 'sans Idle Dance', 24);
+					animation.addByPrefix('singUP', 'sans Up Note', 24);
+					animation.addByPrefix('singRIGHT', 'sans Right Note', 24);
+					animation.addByPrefix('singDOWN', 'sans Down Note', 24);
+					animation.addByPrefix('singLEFT', 'sans Left Note', 24);
+
+					addOffset('idle');
+					addOffset("singUP", 14, 100);
+					addOffset("singRIGHT", -2, -6);
+					addOffset("singLEFT", 95, -1);
+					addOffset("singDOWN", 45, 6);
+
+					playAnim('idle');
+
+				case 'sans3':
+					tex = Paths.getSparrowAtlas('Sans_assets3','shared',true);
+					frames = tex;
+					animation.addByPrefix('idle', 'sans Idle Dance 3', 24);
+					animation.addByPrefix('singUP', 'sans Up Note 3', 24);
+					animation.addByPrefix('singRIGHT', 'sans Right Note 3', 24);
+					animation.addByPrefix('singDOWN', 'sans Down Note 3', 24);
+					animation.addByPrefix('singLEFT', 'sans Left Note 3', 24);
+
+					animation.addByPrefix('singUP-alt', 'sans Up Note 4', 24);
+					animation.addByPrefix('singRIGHT-alt', 'sans Right Note 4', 24);
+					animation.addByPrefix('singDOWN-alt', 'sans Down Note 4', 24);
+					animation.addByPrefix('singLEFT-alt', 'sans Left Note 4', 24);
+
+					addOffset('idle');
+					addOffset("singUP", 14, 100);
+					addOffset("singRIGHT", -2, -6);
+					addOffset("singLEFT", 95, -1);
+					addOffset("singDOWN", 45, 6);
+					addOffset("singUP-alt", 14, 100);
+					addOffset("singRIGHT-alt", -2, -6);
+					addOffset("singLEFT-alt", 95, -1);
+					addOffset("singDOWN-alt", 45, 6);
+
+					playAnim('idle');
 		}
 
 		dance();

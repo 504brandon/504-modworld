@@ -902,15 +902,25 @@ class PlayState extends MusicBeatState {
 					bg.animation.play('gameButMove');
 					bg.antialiasing = FlxG.save.data.antialiasing;
 					bg.scrollFactor.set(0.9, 0.9);
-					bg.active = false;
 					add(bg);
-
 
 					funneEffect = new FlxSprite(-600, -200).loadGraphic(Paths.image('whitty/thefunnyeffect'));
 					funneEffect.alpha = 0.5;
 					funneEffect.scrollFactor.set();
 					funneEffect.visible = true;
 					add(funneEffect);
+
+					trace('balls stick');
+
+				case 'judgementhall':
+					defaultCamZoom = 0.9;
+					curStage = 'judgementhall';
+					var bg:FlxSprite = new FlxSprite(-400, -150).loadGraphic(Paths.image('sans/Sansbg'));
+					bg.setGraphicSize(Std.int(bg.width * 1.1));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
 
 				default:
 					{
@@ -985,6 +995,16 @@ class PlayState extends MusicBeatState {
 					tweenCamIn();
 				}
 
+			case 'sans':
+				dad.x -= 300;
+				dad.y += 450;
+			case 'sans2':
+				dad.x -= 300;
+				dad.y += 450;
+			case 'sans3':
+				dad.x -= 300;
+				dad.y += 450;
+
 			case "spooky":
 				dad.y += 200;
 			case "monster":
@@ -1011,11 +1031,8 @@ class PlayState extends MusicBeatState {
 					// trailArea.scrollFactor.set();
 					if (!PlayStateChangeables.Optimize) {
 						var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
-						// evilTrail.changeValuesEnabled(false, false, false, false);
-						// evilTrail.changeGraphic()
 						add(evilTrail);
 					}
-					// evilTrail.scrollFactor.set(1.1, 1.1);
 				}
 
 				dad.x -= 150;
@@ -1027,6 +1044,11 @@ class PlayState extends MusicBeatState {
 
 		// REPOSITIONING PER STAGE
 		switch (curStage) {
+			case 'judgementhall':
+				boyfriend.y += 90;
+				boyfriend.x += 100;
+				gf.y += 100;
+				gf.x -= 100;
 			case 'limo':
 				boyfriend.y -= 220;
 				boyfriend.x += 260;
@@ -1704,6 +1726,14 @@ class PlayState extends MusicBeatState {
 
 		FlxG.sound.music.play();
 		vocals.play();
+
+		songLength = FlxG.sound.music.length;
+
+		if (FlxG.save.data.songPosition)
+		{
+			songPosBar.setRange(0, songLength - 1000);
+			songPosBar.numDivisions = 1000;
+		}
 
 		// Song check real quick
 		switch (curSong) {
